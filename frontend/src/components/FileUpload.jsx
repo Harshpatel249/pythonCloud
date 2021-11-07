@@ -8,10 +8,10 @@ class Main extends React.Component {
       imageURL: '',
     };
 
-    this.handleUploadImage = this.handleUploadImage.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
   }
 
-  handleUploadImage(ev) {
+  handleUpload(ev) {
     ev.preventDefault();
 
     const data = new FormData();
@@ -30,7 +30,7 @@ class Main extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleUploadImage}>
+      <form >
         <div>
           <input ref={(ref) => { this.uploadInput = ref; }} type="file" />
         </div>
@@ -39,9 +39,11 @@ class Main extends React.Component {
         </div>
         <br />
         <div>
-          <button>Upload</button>
+          <button onClick={this.handleUpload}>Upload</button>
         </div>
-        <img src={this.state.imageURL} alt="img" />
+        <div>
+          <a target = '_blank' href="http://localhost:5000/result1">Download</a>
+        </div>
       </form>
     );
   }
