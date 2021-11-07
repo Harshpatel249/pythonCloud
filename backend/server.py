@@ -31,17 +31,18 @@ def fileUpload():
     destination="/".join([target, filename])
     file.save(destination)
     session['uploadFilePath']=destination
-    print(destination)
     result = subprocess.check_output(["python", destination])
     result = str(result)
+    result = result.replace('\\r\\n', ' ')
+    result = result.replace('b', '')
+    print(result)
     f = open("results.txt", "w")
     f.write(result)
     f.close()
-    print(result)
     response="====================================="
     return response
 
-@app.route("/result1")
+@app.route("/resultt")
 def downloadFile():
     path = DOWNLOAD_FILE
     return send_file(path, as_attachment=False)

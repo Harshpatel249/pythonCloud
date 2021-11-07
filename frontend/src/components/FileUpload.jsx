@@ -42,7 +42,7 @@ class Main extends React.Component {
           <button onClick={this.handleUpload}>Upload</button>
         </div>
         <div>
-          <a target = '_blank' href="http://localhost:5000/result1">Download</a>
+          <a target = '_blank' href="http://localhost:5000/resultt">Download</a>
         </div>
       </form>
     );
