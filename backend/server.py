@@ -7,7 +7,7 @@ import subprocess
 
 logging.basicConfig(level=logging.INFO)
 
-logger = logging.getLogger('HELLO WORLD')
+logger = logging.getLogger('Server Active')
 
 
 UPLOAD_FOLDER = './upload'
