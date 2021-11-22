@@ -3,8 +3,11 @@ import React from 'react';
 import Main from './components/FileUpload';
 
 const App = () => (
-  <div>
-    <h1>File Upload</h1>
+  <div style={{
+    backgroundColor: '#678983',
+    height: 1000,
+    
+    }}>
     <Main />
   </div>
 );

@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from '@mui/material/Button';import { padding } from '@mui/system';
+;
 
 class Main extends React.Component {
   constructor(props) {
@@ -16,7 +18,7 @@ class Main extends React.Component {
 
     const data = new FormData();
     data.append('file', this.uploadInput.files[0]);
-    data.append('filename', this.fileName.value);
+    //data.append('filename', this.fileName.value);
 
     fetch('http://localhost:5000/upload', {
       method: 'POST',
@@ -30,19 +32,28 @@ class Main extends React.Component {
 
   render() {
     return (
-      <form >
-        <div>
-          <input ref={(ref) => { this.uploadInput = ref; }} type="file" />
+      
+      <form style={{
+        display: 'flex',
+        margin: 'auto',
+        marginTop: 0,
+        width: 400,
+        flexWrap: 'wrap',
+        backgroundColor: '#F0E9D2',
+        padding: 100,
+        }}>
+        <div style={{ width: '100%', float: 'left' }}>
+          <h1>Python File Compile</h1>
         </div>
-        <div>
-          <input ref={(ref) => { this.fileName = ref; }} type="text" placeholder="Enter the desired name of file" />
+        <div >
+          <input  ref={(ref) => { this.uploadInput = ref; }} type="file"/>
         </div>
         <br />
-        <div>
-          <button onClick={this.handleUpload}>Upload</button>
+        <div htmlFor="contained-button-file">
+          <Button variant="contained" color="primary" component="span" onClick={this.handleUpload}>Upload</Button>
         </div>
         <div>
-          <a target = '_blank' href="http://localhost:5000/resultt">Download</a>
+          <a  href="http://localhost:5000/resultt">Download</a>
         </div>
       </form>
     );
